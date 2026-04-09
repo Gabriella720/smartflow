@@ -4,12 +4,21 @@ import {
   AssistantSheet,
   type AssistantPlanApply,
   type AssistantResult,
-} from './components/AssistantSheet.tsx'
-import { BottomTabs, type TabId } from './components/BottomTabs.tsx'
-import { FloatingAssistantButton } from './components/FloatingAssistantButton.tsx'
-import { HomeScreen } from './screens/HomeScreen.tsx'
-import { WeeklyReportScreen } from './screens/WeeklyReportScreen.tsx'
-import { ScheduleConflictScreen } from './screens/ScheduleConflictScreen.tsx'
+} from './components/AssistantSheet'
+import { BottomTabs, type TabId } from './components/BottomTabs'
+import { HomeScreen } from './screens/HomeScreen'
+import { WeeklyReportScreen } from './screens/WeeklyReportScreen'
+import { ScheduleConflictScreen } from './screens/ScheduleConflictScreen'
+
+function FloatingAssistantButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button type="button" className="fab" onClick={onClick} aria-label="AI Assistant">
+      <span className="fabIcon" aria-hidden="true">
+        ✦
+      </span>
+    </button>
+  )
+}
 
 type ThemeMain = 'workday' | 'holiday'
 type ThemeSub =
